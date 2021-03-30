@@ -11,9 +11,23 @@
     </head>
     <body>
         <div id="app">
-            <p> {{ message }}</p>
-            <button v-on:click="reverseMessage">Reverse words</button>
-            <input v-model="message">
+            <ul>
+                <li v-for="dude in characters">
+                    {{ dude }}
+
+                    <small v-if="dude.split(' ').length < 3">
+                       <em> lol, short name </em>
+                    </small>
+                </li>
+            </ul>
+            
+            <form class="AddNew" @submit.prevent="add">
+                <input type="text" v-model="dude1">
+            </form>
+
+            <p class="preview">
+                {{ dude1 }}
+            </p>
         </div>
 
         <script src="index.js"></script>
