@@ -1,11 +1,17 @@
 var app = new Vue({
     el: '#app',
     data: {
-      message: 'Jake the Dog.'
+      characters: ['Jake the Dog.',
+                    'Marceline the Vampire'
+                  ],
+      dude1: ''
     },
     methods: {
-        reverseMessage: function (){
-            this.message = this.message.split('').reverse().join('')
-        }
+      add(){
+        this.characters.push(
+          this.dude1
+        )
+      }
     }
+    
   })
